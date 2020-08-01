@@ -25,6 +25,14 @@ const resolvers = {
                         .equals(input.proyecto)
 
             return tareas;
+        },
+        filtrarProyectos: async (_, { input }, ctx) => {
+            console.log(input.proyecto)
+            const proyectos = await Proyecto.find({creador: ctx.usuario.id })
+                    .where('nombre')
+                        .equals(input.proyecto)
+
+            return proyectos;
         }
     },
     Mutation: {

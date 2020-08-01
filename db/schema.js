@@ -20,6 +20,8 @@ const typeDefs = gql`
 
     type Query {
         obtenerProyectos: [Proyecto]
+        filtrarProyectos(input: ProyectoIDInput): [Proyecto]
+
         obtenerTareas(input: ProyectoIDInput): [Tarea]
     }
 
